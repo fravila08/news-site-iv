@@ -43,7 +43,7 @@ function Search ({articles}) {
                 ? <div >
                     <h2>search results</h2>
                     {results.map((article) => (
-                    <ArticleTeaser key={article.id} {...article}/>
+                    <ArticleTeaser key={article.objectID} {...article}/>
                 ))}</div>
                 : ''
             }

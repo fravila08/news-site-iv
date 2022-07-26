@@ -3,30 +3,33 @@ import {Image, Container, Row, Col } from 'react-bootstrap'
 // import Container from 'react-bootstrap/Container'
 // import Row from 'react-bootstrap/Row'
 // import Col from 'react-bootstrap/Col'
+import { Link } from 'react-router-dom'
 
-
-function Article ({ image, title, byline, created_date, abstract}){
+function Article ({ title, author, created_at, story_text, url}){
 
     return(
         <Container >
             <Row className='article'>
-                <Col lg='3' className='my-col' >
-                    {image ? <Image  width={image.width} height={image.height} rounded src={image.url}/>
+                {/* <Col lg='3' className='my-col' >
+                    {image ? <Image  width={image.width} height={image.height} rounded src={image.story_text}/>
                                  : <p> image not found </p> 
                     } 
-                </Col>
+                </Col> */}
                 <Col lg='9'>
                     <Row>
                         <h1>{title}</h1>
                     </Row>
                     <Row>
-                        <p>{created_date}</p>
+                        <p>{created_at}</p>
                     </Row>
                     <Row>
-                        { byline && <h2>{ byline }</h2> }
+                        { author && <h2>{ author }</h2> }
                     </Row>
                     <Row>
-                        <p>{abstract}</p>
+                        {story_text
+                            ?<p>{story_text}</p>
+                            :<a href={url}>Link to Story</a>
+                        }
                     </Row>
 
                 </Col>

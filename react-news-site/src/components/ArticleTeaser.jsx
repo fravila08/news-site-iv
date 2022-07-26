@@ -4,18 +4,18 @@ import Col from 'react-bootstrap/Col';
 import { Link } from 'react-router-dom'
 
 // function ArticleTeaser (props){
-function ArticleTeaser ({id, title, created_date}){
+function ArticleTeaser ({objectID, title, created_at, comment_text}){
     return(
         <Container>
             <hr/>
             <Row>
                 <Col lg='8'>
                     <h2 >
-                        <Link to={`/articles/${id+1}`} >{title} </Link>
+                        <Link to={`/articles/${objectID}`} >{title} {comment_text}</Link>
                     </h2>
                 </Col>
                 <Col lg='4'>
-                    <p>{created_date}</p>
+                    <p>{created_at}</p>
                 </Col>
             </Row>
         </Container>
